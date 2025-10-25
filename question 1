@@ -1,0 +1,71 @@
+Create a class Employee with attributes name, basicSalary, and experience.
+If experience > 5 years → add 20% bonus. If experience < 2 years → deduct 5%. 
+Print the final salary using a member function. check and tell mistake without changing my code
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+class Employee {
+    private:
+    string name;
+    float salary;
+    int experience;
+    int x;
+    int y;
+    public:
+    void setName(string n) {
+        name = n;
+    }
+    void setSalary(float s) {
+        salary = s;
+    }
+    void setExperience(int e) {
+        experience = e;
+    }
+    string getName() {
+        return name;
+    }
+    float getSalary() {
+        return salary;
+    }
+    int getExperience() {
+        return experience;
+    }
+    void fun() {
+        if(experience > 5) {
+            x = (20 * salary) / 100;
+            salary = salary + x;
+            cout<<"Updated Salary "<<salary;
+        }
+        else if(experience < 2) {
+            y = (5 * salary) / 100;
+            salary = salary - y;
+             cout<<"Updated Salary "<<salary;
+        }
+        else {
+             cout<<"Updated Salary "<<salary;
+        }
+    }
+};
+int main() {
+    Employee e;
+    string name;
+    float salary;
+    int experience;
+    cout<<"Enter Name : ";
+    getline(cin,name);
+    cout<<"Enter Salary : ";
+    cin>>salary;
+    cout<<"Enter experience : ";
+    cin>>experience;
+    e.setName(name);
+    e.setSalary(salary);
+    e.setExperience(experience);
+    cout<<"Name : "<<e.getName()<<endl;
+    cout<<"Salary : "<<e.getSalary()<<endl;
+    cout<<"Experience : "<<e.getExperience()<<endl;
+    e.fun();
+    return 0;
+}
