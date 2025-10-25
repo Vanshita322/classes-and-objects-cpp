@@ -1,0 +1,73 @@
+Create a Student class with marks of 3 subjects. Calculate total and average using a member function.
+Assign grades:
+
+≥90 → A
+
+≥75 → B
+
+≥60 → C
+
+else → Fail
+Display results for 5 students using an array of objects.
+
+
+
+
+#include<iostream>
+#include<string>
+using namespace std;
+class Student {
+    public:
+    string name;
+    int n;
+    int i;
+    int marks[10];
+    int sum = 0;
+    float avg;
+    void inputs() {
+        cout<<"Enter name : ";
+        getline(cin,name);
+        cout<<"Enter num : ";
+        cin>>n;
+        cout<<"Enter marks : ";
+        for(i=1;i<=n;i++) {
+            cin>>marks[i];
+        }
+    }
+    void display() {
+        cout<<"Name : "<<name<<endl;;
+        for(i=1;i<=n;i++) {
+            cout<<marks[i] <<" ";
+        }
+        cout<<endl;
+    }
+    void fun() {
+        for(i=1;i<=n;i++) {
+            sum = sum + marks[i];
+        }
+        avg = sum / n;
+        cout<<"Sum : "<<sum<<endl;
+        cout<<"Average : "<<avg<<endl;
+    }
+    void grade() {
+        for(i=1;i<=n;i++) {
+            if(marks[i] > 90) {
+                cout<<"Pass";
+            }
+            else if(marks[i] >75 && marks[i] < 89) {
+                cout<<"Average";
+            }
+            else {
+                cout<<"Fail";
+            }
+        }
+    }
+};
+int main() {
+    Student s;
+    s.inputs();
+    s.display();
+    s.fun();
+    s.grade();
+    return 0;
+}
