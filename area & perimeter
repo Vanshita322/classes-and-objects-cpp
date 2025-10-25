@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class Calculate {
+    public:
+    int length;
+    int breadth;
+    int a,p;
+    void inputs() {
+        cin>>length>>breadth;
+    }
+    int area() {
+        a = length * breadth;
+        return a;
+    }
+    int perimeter() {
+        p = 2 * (length + breadth);
+        return p;
+    }
+    void display() {
+        cout<<"Area is : "<<area()<<endl;
+        cout<<"Perimeter is : "<<perimeter();
+    }
+};
+int main() {
+    Calculate c;
+    c.inputs();
+    c.display();
+    return 0;
+}
