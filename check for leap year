@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class Date {
+    public:
+    int day;
+    int month;
+    int year;
+    void inputs() {
+        cin>>day;
+        cin>>month;
+        cin>>year;
+    }
+  void display() {
+      cout<<day<<" "<<month<<" "<<year<<endl;
+  }  
+  void leap() {
+      if((year % 4 == 0 && year % 100 != 0) || (year % 25 == 0)) {
+          cout<<year<<" is a leap year ";
+      }
+      else {
+          cout<<year <<" is not a leap year";
+      }
+  }
+};
+int main() {
+    Date d;
+    d.inputs();
+    d.display();
+    d.leap();
+    return 0;
+}
