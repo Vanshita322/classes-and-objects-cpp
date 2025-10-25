@@ -1,0 +1,29 @@
+#include<iostream>
+using namespace std;
+class Occurence {
+    public:
+    int num;
+    int key;
+    int rem;
+    int count=0;
+    void inputs() {
+        cin>>num;
+        cin>>key;
+    }
+    void countdigit() {
+        while(num>0) {
+        rem = num % 10;
+        if(rem == key) {
+            count++;
+        }
+        num/=10;
+        }
+        cout<<count;
+    }
+};
+int main() {
+    Occurence o;
+    o.inputs();
+    o.countdigit();
+    return 0;
+}
