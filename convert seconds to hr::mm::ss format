@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+class Time {
+public:
+    int seconds;
+
+    void input() {
+        cout << "Enter time in seconds: ";
+        cin >> seconds;
+    }
+
+    void convert() {
+        int h, m, s;
+        h = seconds / 3600;         // 1 hour = 3600 seconds
+        m = (seconds % 3600) / 60;  // remaining minutes
+        s = seconds % 60;           // remaining seconds
+
+        cout << "Time = " << h << " hours " << m << " minutes " << s << " seconds" << endl;
+    }
+};
+
+int main() {
+    Time t;
+    t.input();
+    t.convert();
+
+    return 0;
+}
